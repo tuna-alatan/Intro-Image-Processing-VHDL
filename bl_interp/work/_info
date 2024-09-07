@@ -1,0 +1,254 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/tuna/Documents/Staj2024/histogram
+Ebl_bram_ctrl
+Z0 w1723209268
+Z1 DPx4 ieee 17 fixed_float_types 0 22 j<WD5SZ6`I4KC;8P]h@_10
+Z2 DPx4 ieee 17 fixed_generic_pkg 0 22 Rl?j<5:i_L<aE9]<7A]V?0
+Z3 DPx4 ieee 9 fixed_pkg 0 22 c`b>2Shb`ic5KAcV=K;Co1
+Z4 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z5 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 464
+Z8 dC:/Users/tuna/Documents/Staj2024/bl_interp
+Z9 8C:/Users/tuna/Documents/Staj2024/bl_interp/bl_bram_ctrl.vhd
+Z10 FC:/Users/tuna/Documents/Staj2024/bl_interp/bl_bram_ctrl.vhd
+l0
+L7 1
+VdmF[dIDXIQ]P8EgKh<IGF1
+!s100 h?dc9HF[G0JNoH8iZ9OO`1
+Z11 OV;C;2020.1;71
+33
+Z12 !s110 1725030998
+!i10b 1
+Z13 !s108 1725030998.000000
+Z14 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/bl_interp/bl_bram_ctrl.vhd|
+Z15 !s107 C:/Users/tuna/Documents/Staj2024/bl_interp/bl_bram_ctrl.vhd|
+!i113 1
+Z16 o-work work -2008 -explicit
+Z17 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 12 bl_bram_ctrl 0 22 dmF[dIDXIQ]P8EgKh<IGF1
+!i122 464
+l72
+L51 133
+V4d;TKGVTYQ?Ajj2APH3F[0
+!s100 ?o?7Je]mhAm2>FeKYN=jD1
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Ebl_interp
+Z18 w1725736948
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+!i122 465
+R8
+Z19 8C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp.vhd
+Z20 FC:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp.vhd
+l0
+L7 1
+VQ?WTLfWRVkPV`Ye^Kd_1g0
+!s100 C_<Z60fIk[G6A;zD4;2A20
+R11
+33
+Z21 !s110 1725736989
+!i10b 1
+Z22 !s108 1725736989.000000
+Z23 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp.vhd|
+Z24 !s107 C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp.vhd|
+!i113 1
+R16
+R17
+Abehvaioral
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z25 DEx4 work 9 bl_interp 0 22 Q?WTLfWRVkPV`Ye^Kd_1g0
+!i122 465
+l139
+L38 203
+VLHR7UL1QZTYmL=A_TUocn1
+!s100 cSB:SG1BA0>Z[3F_[Dfja0
+R11
+33
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R16
+R17
+Ebl_interp_tb
+Z26 w1725030702
+Z27 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+!i122 467
+R8
+Z28 8C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd
+Z29 FC:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd
+l0
+L9 1
+VJCL1cGPnN30zfiZ1AoZiQ2
+!s100 XoOZR1abG4=O`i8Zb:TZz1
+R11
+32
+Z30 !s110 1725736990
+!i10b 1
+Z31 !s108 1725736990.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd|
+Z33 !s107 C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd|
+!i113 1
+Z34 o-work work -2002 -explicit
+R17
+Atest_bench
+Z35 DEx4 work 11 frame_valid 0 22 3KJzoFGk`kWk2Gf>WIgd>2
+R25
+R27
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 12 bl_interp_tb 0 22 JCL1cGPnN30zfiZ1AoZiQ2
+!i122 467
+l40
+L12 109
+VA3kT2:debOUzJ@`<kS5613
+!s100 Pe<7?=2H3[6F_JQjL<KW;3
+R11
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R34
+R17
+Ebram
+Z36 w1722407837
+R5
+R6
+R7
+!i122 466
+R8
+Z37 8C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd
+Z38 FC:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd
+l0
+L5 1
+V`fXSX_]fHU]H2n@;Na]Kg0
+!s100 AH4>;goSSQ4m;mMKz<^HO3
+R11
+33
+R21
+!i10b 1
+R22
+Z39 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd|
+Z40 !s107 C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd|
+!i113 1
+R16
+R17
+Abehavioral
+R5
+R6
+R7
+DEx4 work 4 bram 0 22 `fXSX_]fHU]H2n@;Na]Kg0
+!i122 466
+l31
+L25 25
+V@?Blj8FoW9X`Fknd9_@A_3
+!s100 Gf4Z_^hm@nn8Z49O>B^CT3
+R11
+33
+R21
+!i10b 1
+R22
+R39
+R40
+!i113 1
+R16
+R17
+Eframe_valid
+Z41 w1722254452
+R4
+R6
+R7
+!i122 468
+R8
+Z42 8C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+Z43 FC:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+l0
+L5 1
+V3KJzoFGk`kWk2Gf>WIgd>2
+!s100 MWcLkDeL@^?@@mB9QFGGn2
+R11
+32
+R30
+!i10b 1
+R31
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd|
+Z45 !s107 C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd|
+!i113 1
+R34
+R17
+Abehavioral
+R4
+R6
+R7
+R35
+!i122 468
+l34
+Z46 L21 106
+Z47 VG@kQ=dE9`9Ib<JWQaMLhZ0
+Z48 !s100 2_a[ceJhK;dPnoW<L_1WC0
+R11
+32
+R30
+!i10b 1
+R31
+R44
+R45
+!i113 1
+R34
+R17

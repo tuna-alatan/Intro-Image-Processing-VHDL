@@ -1,0 +1,138 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+use ieee.fixed_pkg.all;
+
+entity bl_interp is
+	generic(
+		y_res		: integer;
+		x_res		: integer;
+		
+		new_w		: integer;
+		new_h		: integer;
+		
+		x_bits		: integer := integer(ceil(log2(real(x_res))));
+		y_bits		: integer := integer(ceil(log2(real(y_res))));
+		
+		bram_width	: integer;
+		bram_depth	: integer;
+		
+		fixed_pres	: integer
+	);
+	port(
+		clk			: in std_logic;
+		rstn		: in std_logic;
+		
+		d_val		: in std_logic;
+		f_val		: in std_logic;
+		v_data		: in std_logic_vector;
+		
+		d_val_out	: out std_logic;
+		f_val_out	: out std_logic;
+		v_data_out	: out std_logic_vector((bram_width - 1) downto 0) 
+	);
+end entity;
+
+architecture Behvaioral of bl_interp is
+
+component bl_bram_ctrl is
+	generic (
+		x_res			: integer;
+		y_res			: integer;
+		
+		new_w			: integer;
+		new_h			: integer;
+		
+		x_bits			: integer := integer(ceil(log2(real(x_res))));
+		y_bits			: integer := integer(ceil(log2(real(y_res))));
+		
+		bram_width		: integer;
+		bram_depth		: integer;
+		
+		fixed_pres		: integer
+	);
+	port (
+		clk				: in std_logic;
+		rstn			: in std_logic;
+		
+		f_val			: in std_logic;
+		d_val			: in std_logic;
+		v_data			: in std_logic_vector((bram_width - 1) downto 0);
+		
+		f_val_out		: out std_logic;
+		d_val_out		: out std_logic;
+		v_data_out		: out std_logic_vector((bram_width - 1) downto 0);
+		
+		x_l				: out std_logic_vector((x_bits - 1) downto 0);
+		
+		a 				: out std_logic_vector((bram_width - 1) downto 0);
+		b 				: out std_logic_vector((bram_width - 1) downto 0);
+		
+		mapped_x_out	: out ufixed((x_bits - 1) downto -fixed_pres)
+	);
+end component;
+
+signal s_d_val, s_f_val				: std_logic;
+signal s_d_val_d1, s_f_val_d1		: std_logic;
+
+signal x_l 							: std_logic_vector((x_bits - 1) downto 0);
+
+signal x_weight						: ufixed(bram_width downto -fixed_pres);
+
+begin
+
+inst_bram_ctrl : bl_bram_ctrl
+generic map(
+	x_res			=> x_res,
+	y_res			=> y_res,
+	
+	new_w			=> new_w,
+	new_h			=> new_h,
+	
+	bram_width		=> bram_width,
+	bram_depth		=> bram_depth
+)
+port map(
+	clk				=> clk,
+	rstn			=> rstn,
+	
+	f_val			=> f_val,
+	d_val			=> d_val,
+	v_data			=> v_data,
+	
+	f_val_out		=> s_f_val,	
+	d_val_out		=> s_d_val,	
+	v_data_out		=> s_v_data,
+
+	x_l				=> x_l;
+	
+	a 				=> a, 			
+	b 				=> b, 			
+	
+	mapped_x_out	=> mapped_x_out
+);
+
+d_val_out		<= s_d_val_d1;
+f_val_out		<= s_f_val_d1;
+
+x_weight		<= resize(mapped_x_out - to_ufixed(unsigned(x_l), x_bits, -fixed_pres), bram_width, -fixed_pres);
+
+
+P_MAIN : process(clk, rstn)
+begin
+	if (rstn = '0') then
+		v_data_out		<= (others => '0');
+	elsif rising_edge(clk) then
+		s_d_val_d1		<= s_d_val;
+		s_f_val_d1		<= s_f_val;
+		
+		v_data_out		<= std_logic_vector(to_unsigned(to_ufixed(unsigned(a), bram_width, -fixed_pres) * to_ufixed(1, bram_width, -fixed_pres) - x_weight +
+							 to_ufixed(unsigned(b), bram_width, -fixed_pres) * x_weight));
+		
+	end if;
+end process;
+
+
+
+end architecture;

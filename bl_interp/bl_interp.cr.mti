@@ -1,0 +1,38 @@
+C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package instance fixed_pkg
+-- Loading package fixed_float_types
+-- Loading package fixed_generic_pkg
+-- Loading package body fixed_generic_pkg
+-- Loading package std_logic_textio
+-- Compiling entity bl_interp_tb
+-- Compiling architecture test_bench of bl_interp_tb
+-- Loading entity bl_interp
+-- Loading entity frame_valid
+** Warning: C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd(83): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/tuna/Documents/Staj2024/bl_interp/bl_interp_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity bram
+-- Compiling architecture Behavioral of bram
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package MATH_REAL
+-- Compiling entity frame_valid
+-- Compiling architecture Behavioral of frame_valid
+
+} {} {}}
