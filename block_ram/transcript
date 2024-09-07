@@ -1,0 +1,48 @@
+# Reading pref.tcl
+# OpenFile C:/Users/tuna/Documents/Staj2024/block_ram/block_ram.mpf
+# Loading project block_ram
+# Compile of block_ram_tb.vhd was successful.
+# Compile of block_ram_top.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of bram_ctrl.vhd was successful.
+# Compile of rcg.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.block_ram_tb
+# vsim -gui work.block_ram_tb 
+# Start time: 14:45:49 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.block_ram_tb(test_bench)
+# Loading work.block_ram_top(behavioral)
+# Loading work.rcg(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.bram_ctrl(behavioral)
+# Loading work.bram(behavioral)
+add wave -position insertpoint sim:/block_ram_tb/*
+run
+run
+# Compile of block_ram_tb.vhd was successful.
+# Compile of block_ram_top.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of bram_ctrl.vhd was successful.
+# Compile of rcg.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.block_ram_tb(test_bench)
+# Loading work.block_ram_top(behavioral)
+# Loading work.rcg(behavioral)
+# Loading work.bram_ctrl(behavioral)
+# Loading work.bram(behavioral)
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+run
+add wave -position insertpoint  \
+sim:/block_ram_tb/wr_en_out \
+sim:/block_ram_tb/wr_add_out \
+sim:/block_ram_tb/wr_data_out
+# End time: 15:03:17 on Aug 30,2024, Elapsed time: 0:17:28
+# Errors: 0, Warnings: 1

@@ -1,0 +1,60 @@
+# Reading pref.tcl
+# OpenFile C:/Users/tuna/Documents/Staj2024/filtering/filtering.mpf
+# Loading project filtering
+vsim -gui work.filtering_tb
+# vsim -gui work.filtering_tb 
+# Start time: 15:22:42 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.math_real(body)
+# Loading ieee.numeric_std(body)
+# Loading work.filtering_tb(test_bench)
+# Loading work.frame_valid(behavioral)
+# Loading work.diag_test_pattern_gen(behavioral)
+# Loading work.filtering(behavioral)
+# Loading work.bram_controller(behavioral)
+# Loading work.bram(behavioral)
+add wave -position insertpoint  \
+sim:/filtering_tb/duv/inst_bram_controller_1/x_res \
+sim:/filtering_tb/duv/inst_bram_controller_1/y_res \
+sim:/filtering_tb/duv/inst_bram_controller_1/width_bits \
+sim:/filtering_tb/duv/inst_bram_controller_1/depth_bits \
+sim:/filtering_tb/duv/inst_bram_controller_1/x_index_bits \
+sim:/filtering_tb/duv/inst_bram_controller_1/y_index_bits \
+sim:/filtering_tb/duv/inst_bram_controller_1/clk \
+sim:/filtering_tb/duv/inst_bram_controller_1/rstn \
+sim:/filtering_tb/duv/inst_bram_controller_1/v_data \
+sim:/filtering_tb/duv/inst_bram_controller_1/d_val \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_en_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_add_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_data_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_en_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_add_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/rd_data_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_en_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_add_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_data_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_en_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_add_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/wr_data_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_0_p_0 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_0_p_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_0_p_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_1_p_0 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_1_p_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_1_p_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_2_p_0 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_2_p_1 \
+sim:/filtering_tb/duv/inst_bram_controller_1/l_2_p_2 \
+sim:/filtering_tb/duv/inst_bram_controller_1/d_val_out \
+sim:/filtering_tb/duv/inst_bram_controller_1/x_index \
+sim:/filtering_tb/duv/inst_bram_controller_1/y_index
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /filtering_tb/duv
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /filtering_tb/duv
+# End time: 15:52:31 on Aug 30,2024, Elapsed time: 0:29:49
+# Errors: 0, Warnings: 3

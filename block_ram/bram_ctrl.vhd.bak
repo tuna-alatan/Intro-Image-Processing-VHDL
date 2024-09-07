@@ -1,0 +1,86 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity bram_ctrl is
+	port (
+		clk		: in std_logic;
+		rstn	: in std_logic;
+		
+		rd_en	: out std_logic;
+		rd_add	: out std_logic_vector(7 downto 0);
+		rd_data	: in std_logic_vector(7 downto 0);
+		
+		wr_en	: out std_logic;
+		wr_add	: out std_logic_vector(7 downto 0);
+		wr_data	: out std_logic_vector(7 downto 0);
+		
+		error 	: out std_logic
+	);
+end bram_ctrl;
+
+architecture Behavioral of bram_ctrl is
+
+signal s_address	: integer range 0 to 256 := 0;
+signal prev_add		: integer range 0 to 256 := 0; 
+signal s_rd_add		: integer range 0 to 256 := 0;
+
+type states is (WR, RD, STOP);
+signal state : states := WR;
+
+
+begin 
+
+p_control : process(rstn, clk, s_address)
+begin
+
+	if (rstn = '0') then 
+		s_address <= 0;
+	else 
+		if rising_edge(clk) then
+			
+			case state is
+				when WR =>
+					if (s_address = 256) then
+						s_address <= 0;
+						state <= RD;
+					else	
+						rd_en <= '0';
+						wr_en <= '1';
+						wr_data <= std_logic_vector(to_unsigned(s_address, 8));
+						wr_add <= std_logic_vector(to_unsigned(s_address, 8));
+						s_address <= s_address + 1;
+					end if;
+					
+				when RD =>
+					if (s_rd_add = 256) then
+						s_address <= 0;
+						state <= STOP;
+						error <= '1'
+					else
+						rd_en <= '1';
+						wr_en <= '0';
+												
+						if (prev_add = to_integer(unsigned(rd_data))) then 
+							error <= '0'; 
+						else
+							error <= '1';
+						end if;
+						
+						prev_add <= s_rd_add;
+						s_rd_add <= s_rd_add + 1;
+					
+					end if;
+					
+				when STOP =>
+					s_address <= 0;
+					rd_en <= '0';
+					wr_en <= '0';				
+			end case;
+		end if;
+	end if;
+end process;
+
+rd_add <= std_logic_vector(to_unsigned(s_rd_add, 8));
+
+end architecture;

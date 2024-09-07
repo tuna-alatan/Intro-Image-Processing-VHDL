@@ -1,0 +1,281 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+entity bram_controller is
+	generic (
+		x_res			: integer := 640;
+		y_res			: integer := 480;
+	
+		width_bits		: integer := 8;
+		depth_bits		: integer := 10;
+		
+		x_index_bits 	: integer := integer(ceil(log2(real(x_res)));
+		y_index_bits 	: integer := integer(ceil(log2(real(y_res)))
+	);
+
+	port (
+		clk			: in std_logic;
+		rstn		: in std_logic;
+		
+		v_data		: in std_logic_vector(7 downto 0);
+		d_val		: in std_logic;
+		
+		rd_en_1		: out std_logic;
+		rd_add_1	: out std_logic_vector((depth_bits - 1) downto 0);
+		rd_data_1	: in std_logic_vector((width_bits - 1) downto 0);
+		
+		rd_en_2		: out std_logic;
+		rd_add_2	: out std_logic_vector((depth_bits - 1) downto 0);
+		rd_data_2	: in std_logic_vector((width_bits - 1) downto 0);
+		
+		
+		wr_en_1		: out std_logic;
+		wr_add_1	: out std_logic_vector((depth_bits - 1) downto 0);
+		wr_data_1	: out std_logic_vector((width_bits - 1) downto 0);
+		
+		wr_en_2		: out std_logic;
+		wr_add_2	: out std_logic_vector((depth_bits - 1) downto 0);
+		wr_data_2	: out std_logic_vector((width_bits - 1) downto 0);
+		
+		l_0_p_0		: out std_logic_vector((width_bits - 1) downto 0);
+		l_0_p_1		: out std_logic_vector((width_bits - 1) downto 0);
+		l_0_p_2		: out std_logic_vector((width_bits - 1) downto 0);
+		
+		l_1_p_0		: out std_logic_vector((width_bits - 1) downto 0);
+		l_1_p_1		: out std_logic_vector((width_bits - 1) downto 0);
+		l_1_p_2		: out std_logic_vector((width_bits - 1) downto 0);
+		
+		l_2_p_0		: out std_logic_vector((width_bits - 1) downto 0);
+		l_2_p_1		: out std_logic_vector((width_bits - 1) downto 0);
+		l_2_p_2		: out std_logic_vector((width_bits - 1) downto 0);
+		
+		d_val_out	: out std_logic;
+		
+		x_index		: out std_logic_vector((x_index_bits - 1) downto 0);
+		y_index		: out std_logic_vector((y_index_bits - 1) downto 0)
+
+	);
+end bram_controller;
+
+architecture Behavioral of bram_controller is
+
+type states is (IDLE, STATE_1, STATE_2, STATE_3);
+signal state : states;
+
+signal s_d_val_out				: std_logic;
+signal s_d_val_d1				: std_logic;
+signal s_d_val_d2				: std_logic;
+signal s_d_val_d3				: std_logic;
+
+signal s_v_data_d1				: std_logic_vector(7 downto 0);
+signal s_v_data_d2				: std_logic_vector(7 downto 0);
+
+signal count					: integer range 0 to x_res;
+signal count_d1					: integer range 0 to x_res;
+signal count_d2					: integer range 0 to x_res;
+signal count_d3					: integer range 0 to x_res;
+
+signal s_l_0_p_1, s_l_0_p_2		: std_logic_vector((width_bits - 1) downto 0);
+signal s_l_1_p_1, s_l_1_p_2		: std_logic_vector((width_bits - 1) downto 0);
+signal s_l_2_p_1, s_l_2_p_2		: std_logic_vector((width_bits - 1) downto 0);
+
+signal l_count					: integer range 0 to y_res;
+signal s_y_index				: integer range 0 to y_res;
+
+begin
+
+d_val_out	<= s_d_val_out;
+
+l_0_p_1		<= s_l_0_p_1; 
+l_0_p_2		<= s_l_0_p_2;
+ 
+l_1_p_1		<= s_l_1_p_1; 
+l_1_p_2		<= s_l_1_p_2; 
+
+l_2_p_1		<= s_l_2_p_1; 
+l_2_p_2		<= s_l_2_p_2;
+
+P_MAIN : process(clk, rstn)
+begin
+	if (rstn = '0') then
+		rd_add_1		<= (others => '0');
+		wr_add_1		<= (others => '0');
+		
+		rd_add_2		<= (others => '0');
+		wr_add_2		<= (others => '0');
+		
+		wr_data_1		<= (others => '0');
+		wr_data_2		<= (others => '0');
+		
+		rd_en_1			<= '0';
+		wr_en_1			<= '0';
+		
+		rd_en_2			<= '0';
+		wr_en_2			<= '0';
+		
+		s_l_0_p_2		<= (others => '0');
+		s_l_0_p_1		<= (others => '0');
+		l_0_p_0			<= (others => '0');
+
+		s_l_1_p_2		<= (others => '0');
+		s_l_1_p_1		<= (others => '0');
+		l_1_p_0			<= (others => '0');
+
+		s_l_2_p_2		<= (others => '0');
+		s_l_2_p_1		<= (others => '0');
+		l_2_p_0			<= (others => '0');
+		
+		
+		s_d_val_out		<= '0';
+		
+		s_d_val_d1		<= '0';
+		s_d_val_d2		<= '0';
+		s_d_val_d3		<= '0';
+		
+		s_v_data_d1		<= (others => '0');
+		s_v_data_d2		<= (others => '0');
+		
+		x_index			<= 0;
+		
+		
+	elsif rising_edge(clk) then
+	
+		s_v_data_d1		<= v_data;
+		s_v_data_d2		<= s_v_data_d1;
+		
+		wr_en_1 		<= d_val;
+		
+		s_d_val_d1 		<= d_val;
+		s_d_val_d2		<= s_d_val_d1;
+		s_d_val_d3		<= s_d_val_d2;
+		
+		x_index			<= std_logic_vector(to_unsigned(count_d3, x_index_bits));
+		
+		case state is
+			when IDLE	=>
+			when STATE_1		=>
+				wr_add_1		<= std_logic_vector(to_unsigned(count, 10));
+				wr_data_1		<= v_data;
+				
+			when STATE_2		=>
+				rd_en_1 		<= d_val;
+				wr_en_2 		<= s_d_val_d2;
+			
+				wr_add_1		<= std_logic_vector(to_unsigned(count, 10));
+				wr_data_1		<= v_data;
+					
+					
+				rd_add_1		<= std_logic_vector(to_unsigned(count, 10));
+				
+				wr_add_2		<= std_logic_vector(to_unsigned(count_d2, 10));
+				wr_data_2		<= rd_data_1;
+				
+				
+				--l_data_0		<= rd_data_1;
+				--l_data_1		<= v_data;
+				s_d_val_out		<= s_d_val_d3;
+				
+			when STATE_3		=>
+				rd_en_1 		<= d_val;
+				rd_en_2 		<= d_val;
+				wr_en_2 		<= s_d_val_d2;
+		
+				rd_add_1		<= std_logic_vector(to_unsigned(count, 10)); 
+				rd_add_2		<= std_logic_vector(to_unsigned(count, 10));
+				
+				wr_add_1		<= std_logic_vector(to_unsigned(count, 10));
+				wr_data_1		<= v_data;
+								
+				rd_add_1		<= std_logic_vector(to_unsigned(count, 10));
+				
+				wr_add_2		<= std_logic_vector(to_unsigned(count_d2, 10));
+				wr_data_2		<= rd_data_1;
+				
+				s_l_0_p_2		<= rd_data_2;
+				s_l_0_p_1		<= s_l_0_p_2;
+				l_0_p_0			<= s_l_0_p_1;
+				
+				s_l_1_p_2		<= rd_data_1;
+				s_l_1_p_1		<= s_l_1_p_2;
+				l_1_p_0			<= s_l_1_p_1;
+				
+				s_l_2_p_2		<= s_v_data_d2;
+				s_l_2_p_1		<= s_l_2_p_2;
+				l_2_p_0			<= s_l_2_p_1;
+				
+				s_d_val_out		<= s_d_val_d3;
+
+		end case;
+	end if;
+end process;
+
+P_LINE : process(d_val, rstn) 
+begin
+	if (rstn = '0') then
+		l_count			<= 0;
+		state			<= IDLE;
+	elsif rising_edge(d_val) then
+		
+		if (l_count = y_res) then
+			l_count		<= 0;
+		else
+			l_count		<= l_count + 1;
+		end if;
+	
+		if (l_count = 0) then
+			state		<= 	STATE_1;
+		elsif (l_count = 1) then
+			state		<= 	STATE_2;
+		else
+			state		<= 	STATE_3;
+		end if;
+		
+	end if;
+end process;
+
+P_COUNT : process(clk, rstn)
+begin
+	if(rstn = '0') then
+		count			<= 0;
+		count_d1		<= 0;
+		count_d2		<= 0;
+		count_d3		<= 0;
+		
+	elsif rising_edge(clk) then
+	
+		count_d1	<= count;
+		count_d2	<= count_d1;
+		count_d3	<= count_d2;
+		
+		if (d_val = '1') then
+			if (count = (x_res - 1)) then
+				count 	<= 0;
+			else
+				count	<= count + 1;
+			end if;
+		else
+			count		<= 0;
+		end if;
+	end if;
+end process;
+
+P_Y_INDEX : process (rstn, s_d_val_out) 
+begin
+	if (rstn = '0') then
+		y_index			<= 0;
+	elsif rising_edge(s_d_val_out) then
+		y_index			<= std_logic_vector(to_unsigned(s_y_index, y_index_bits));
+		
+		if (s_y_index = (y_res - 1)) then
+			s_y_index		<= 0;
+		else
+			s_y_index		<= s_y_index + 1;
+		end if;
+	end if;
+end process;
+
+end architecture;
+
+

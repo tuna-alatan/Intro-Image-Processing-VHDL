@@ -1,0 +1,321 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/tuna/Documents/Staj2024/test_pattern
+Ebram
+Z0 w1722407837
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1220
+Z4 dC:/Users/tuna/Documents/Staj2024/filtering
+Z5 8C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd
+Z6 FC:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd
+l0
+L5 1
+V`fXSX_]fHU]H2n@;Na]Kg0
+!s100 AH4>;goSSQ4m;mMKz<^HO3
+Z7 OV;C;2020.1;71
+33
+Z8 !s110 1722584419
+!i10b 1
+Z9 !s108 1722584419.000000
+Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd|
+Z11 !s107 C:/Users/tuna/Documents/Staj2024/block_ram/bram.vhd|
+!i113 1
+Z12 o-work work -2008 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 4 bram 0 22 `fXSX_]fHU]H2n@;Na]Kg0
+!i122 1220
+l31
+L25 25
+V@?Blj8FoW9X`Fknd9_@A_3
+!s100 Gf4Z_^hm@nn8Z49O>B^CT3
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ebram_controller
+Z14 w1722508285
+Z15 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R1
+R2
+R3
+!i122 1222
+R4
+Z16 8C:/Users/tuna/Documents/Staj2024/filtering/bram_controller.vhd
+Z17 FC:/Users/tuna/Documents/Staj2024/filtering/bram_controller.vhd
+l0
+L6 1
+VmnMYMhhz3_[]KIK^mF7_N1
+!s100 <h0NgizUoJNPOdF_W0CLb3
+R7
+33
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/filtering/bram_controller.vhd|
+Z19 !s107 C:/Users/tuna/Documents/Staj2024/filtering/bram_controller.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R15
+R1
+R2
+R3
+DEx4 work 15 bram_controller 0 22 mnMYMhhz3_[]KIK^mF7_N1
+!i122 1222
+l87
+L62 215
+V2zem4ME[2?EUbK<f4QF`n1
+!s100 W@ABHC=MO[`=F8EFNjV`[1
+R7
+33
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Ediag_test_pattern_gen
+Z20 w1722234344
+R1
+R2
+R3
+!i122 1224
+R4
+Z21 8C:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd
+Z22 FC:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd
+l0
+L5 1
+V2G8V_g035_;=[477k:7YN0
+!s100 lPEWIMh03Y3dn8H1klH0Q2
+R7
+32
+R8
+!i10b 1
+R9
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd|
+Z24 !s107 C:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd|
+!i113 1
+Z25 o-work work -2002 -explicit
+R13
+Abehavioral
+R1
+R2
+R3
+Z26 DEx4 work 21 diag_test_pattern_gen 0 22 2G8V_g035_;=[477k:7YN0
+!i122 1224
+l31
+L19 94
+V:T`o5=j^D0>Ug5]_@ORFC3
+!s100 c_`j@5FNXk7Y1BL6DdMoX3
+R7
+32
+Z27 !s110 1722584420
+!i10b 1
+R9
+R23
+R24
+!i113 1
+R25
+R13
+Efiltering
+Z28 w1722584414
+R15
+R1
+R2
+R3
+!i122 1221
+R4
+Z29 8C:/Users/tuna/Documents/Staj2024/filtering/filtering.vhd
+Z30 FC:/Users/tuna/Documents/Staj2024/filtering/filtering.vhd
+l0
+L6 1
+VB6iFcfZ[bjXU?iTZ0g^jQ2
+!s100 dNcz3UFMjzEzXl?A7a2U30
+R7
+33
+R8
+!i10b 1
+R9
+Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/filtering/filtering.vhd|
+Z32 !s107 C:/Users/tuna/Documents/Staj2024/filtering/filtering.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R15
+R1
+R2
+R3
+Z33 DEx4 work 9 filtering 0 22 B6iFcfZ[bjXU?iTZ0g^jQ2
+!i122 1221
+l142
+L33 236
+VaD^0hGBEP?PL=bj^T4TA>2
+!s100 iL0Okz4b^FnDVzik_o]o]0
+R7
+33
+R8
+!i10b 1
+R9
+R31
+R32
+!i113 1
+R12
+R13
+Efiltering_tb
+Z34 w1722584225
+Z35 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R2
+R3
+!i122 1225
+R4
+Z36 8C:/Users/tuna/Documents/Staj2024/filtering/filtering_tb.vhd
+Z37 FC:/Users/tuna/Documents/Staj2024/filtering/filtering_tb.vhd
+l0
+L6 1
+V<mJ]]1OGLnSFS95Znl1==3
+!s100 Qk3WO]=;0[TSWLCg>FL8B1
+R7
+32
+R27
+!i10b 1
+Z38 !s108 1722584420.000000
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/filtering/filtering_tb.vhd|
+Z40 !s107 C:/Users/tuna/Documents/Staj2024/filtering/filtering_tb.vhd|
+!i113 1
+R25
+R13
+Atest_bench
+R33
+R1
+R26
+R15
+Z41 DEx4 work 11 frame_valid 0 22 3KJzoFGk`kWk2Gf>WIgd>2
+R35
+R2
+R3
+Z42 DEx4 work 12 filtering_tb 0 22 <mJ]]1OGLnSFS95Znl1==3
+!i122 1225
+l29
+Z43 L9 93
+Z44 VC^1=F89fobj@m8C_2NY3g3
+Z45 !s100 SA7Kgo5b8L[?hbhGQI<j62
+R7
+32
+R27
+!i10b 1
+R38
+R39
+R40
+!i113 1
+R25
+R13
+Efiltering_top
+Z46 w1722497001
+R1
+R2
+R3
+!i122 934
+R4
+Z47 8C:/Users/tuna/Documents/Staj2024/filtering/filtering_top.vhd
+Z48 FC:/Users/tuna/Documents/Staj2024/filtering/filtering_top.vhd
+l0
+L5 1
+VWM=Ul7cF2QN<]5S44bPdN1
+!s100 GNj7zVzIL>;JlUfSAT6QH1
+R7
+32
+Z49 !s110 1722497944
+!i10b 1
+Z50 !s108 1722497943.000000
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/filtering/filtering_top.vhd|
+Z52 !s107 C:/Users/tuna/Documents/Staj2024/filtering/filtering_top.vhd|
+!i113 1
+R25
+R13
+Abehvavioral
+R1
+R2
+R3
+DEx4 work 13 filtering_top 0 22 WM=Ul7cF2QN<]5S44bPdN1
+!i122 934
+l82
+L24 109
+VOV<:JA00O?LG0=BZB<NJ32
+!s100 LJ>4]Gi`Od?2Il4aJ8Q^i1
+R7
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R25
+R13
+Eframe_valid
+Z53 w1722254452
+R15
+R2
+R3
+!i122 1223
+R4
+Z54 8C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+Z55 FC:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+l0
+L5 1
+V3KJzoFGk`kWk2Gf>WIgd>2
+!s100 MWcLkDeL@^?@@mB9QFGGn2
+R7
+32
+R8
+!i10b 1
+R9
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd|
+Z57 !s107 C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd|
+!i113 1
+R25
+R13
+Abehavioral
+R15
+R2
+R3
+R41
+!i122 1223
+l34
+L21 106
+VG@kQ=dE9`9Ib<JWQaMLhZ0
+!s100 2_a[ceJhK;dPnoW<L_1WC0
+R7
+32
+R8
+!i10b 1
+R9
+R56
+R57
+!i113 1
+R25
+R13

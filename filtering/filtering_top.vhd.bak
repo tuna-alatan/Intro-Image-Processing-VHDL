@@ -1,0 +1,132 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity filtering_top is
+	generic(
+		clk_freq			: real := 100_000_000.0;
+		x_res				: integer := 640;
+		y_res				: integer := 480;
+		l2l_w_ns			: real := 62800.0;
+		
+		bram_width_bits		: integer := 8;
+		bram_depth_bits		: integer := 10
+	);
+	port(
+		clk					: in std_logic;
+		rstn				: in std_logic;
+		
+		d_val_out			: out std_logic;
+		v_data_out			: out std_logic_vector(7 downto 0)
+	);
+end filtering_top;
+
+architecture Behvavioral of filtering_top is
+
+signal s_d_val, s_d_val_d1	: std_logic;
+signal s_f_val, s_f_val_d1	: std_logic;
+
+signal s_v_data				: std_logic_vector(7 downto 0);
+
+component filtering is
+	generic(
+		x_res				: integer := 640;
+		y_res				: integer := 480;
+
+		bram_width_bits 	: integer := 8;
+		bram_depth_bits 	: integer := 10
+	);	
+		
+	port(	
+		clk					: in std_logic;
+		rstn				: in std_logic;
+
+		v_data_in			: in std_logic_vector(7 downto 0);
+		v_data_out			: out std_logic_vector(7 downto 0);
+
+		d_val_in			: in std_logic;
+		d_val_out			: out std_logic
+	);
+end component;
+
+component diag_test_pattern_gen is
+	port(
+		clk					: in std_logic;
+		rstn				: in std_logic;
+
+		f_val				: in std_logic;
+		d_val				: in std_logic;
+
+		d_val_d				: out std_logic;
+		f_val_d				: out std_logic;
+		v_data				: out std_logic_vector(7 downto 0)
+	);
+end component;
+
+component frame_valid is
+	generic(
+		clk_freq			: real := 100_000_000.0;
+		x_res				: integer := 640;
+		y_res				: integer := 480;
+		l2l_w_ns			: real := 62800.0
+	);
+	port (
+		clk					: in std_logic;
+		rstn				: in std_logic;
+	
+		f_val				: out std_logic;
+		d_val				: out std_logic
+	);
+end component;
+
+begin
+
+inst_frame_valid : frame_valid
+generic map(
+	clk_freq				=> clk_freq,
+	x_res					=> y_res,
+	x_res					=> y_res,
+	l2l_w_ns				=> l2l_w_ns
+)
+port map(
+	clk						=> clk,
+	rstn					=> rstn,
+	
+	f_val					=> s_f_val,
+	d_val					=> s_d_val
+);
+
+inst_diag_test_pattern : diag_test_pattern_gen
+port map(
+	clk						=> clk,
+	rstn					=> rstn,
+
+	f_val					=> s_f_val,
+	d_val					=> s_d_val,
+
+	d_val_d					=> s_d_val_d1,
+	f_val_d					=> s_f_val_d1,
+	v_data					=> s_v_data
+);
+
+inst_filtering : filtering
+generic map(
+	x_res					=> x_res,
+	y_res					=> y_res,
+
+	bram_width_bits 		=> bram_width_bits,
+	bram_depth_bits 		=> bram_depth_bits
+)
+
+port map(		
+	clk						=> clk,
+	rstn					=> rstn,
+
+	v_data_in				=> s_v_data,
+	v_data_out				=> v_data_out,
+	
+	d_val_in				=> s_d_val_d1,
+	d_val_out				=> d_val_out
+);
+
+end architecture;
