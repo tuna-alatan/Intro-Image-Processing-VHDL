@@ -1,0 +1,203 @@
+# Reading pref.tcl
+# OpenFile C:/Users/tuna/Documents/Staj2024/histogram/histogram.mpf
+# Loading project histogram
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# Compile of data_register.vhd was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.histogram_tb
+# vsim -gui work.histogram_tb 
+# Start time: 16:10:31 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+# Loading work.horiz_test_pattern_gen(behavioral)
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+add wave -position insertpoint  \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/clk \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rstn \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_en \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_add \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_en \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_add \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_count \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/hist_done \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_hist \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/stop_rd \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/d_val \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/v_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/state
+run
+restart
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# Compile of data_register.vhd was successful.
+# 8 compiles, 0 failed with no errors.
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# 7 compiles, 1 failed with no errors.
+run -all
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+restart
+quit -sim
+# End time: 17:34:56 on Aug 30,2024, Elapsed time: 1:24:25
+# Errors: 0, Warnings: 1
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.histogram_tb
+# vsim -gui work.histogram_tb 
+# Start time: 17:35:19 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+add wave -position insertpoint  \
+sim:/histogram_tb/duv/clk \
+sim:/histogram_tb/duv/rstn \
+sim:/histogram_tb/duv/f_val \
+sim:/histogram_tb/duv/d_val \
+sim:/histogram_tb/duv/v_data \
+sim:/histogram_tb/duv/hist_add \
+sim:/histogram_tb/duv/hist_data
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+quit -sim
+# End time: 17:38:19 on Aug 30,2024, Elapsed time: 0:03:00
+# Errors: 0, Warnings: 1
+vsim -gui work.histogram_tb
+# vsim -gui work.histogram_tb 
+# Start time: 17:38:56 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+add wave -position insertpoint sim:/histogram_tb/duv/*
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+run
+# Compile of histogram.vhd was successful.
+# Compile of hist_bram_ctrl.vhd was successful.
+# Compile of bram.vhd was successful.
+# Compile of histogram_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.histogram_tb(test_bench)
+# Loading work.histogram(behavioral)
+# Loading work.hist_bram_ctrl(behvaioral)
+# Loading work.bram(behavioral)
+# Loading work.frame_valid(behavioral)
+# Warning in wave window restart: (vish-4014) No objects found matching '/histogram_tb/duv/s_rd_data_out'. 
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+add wave -position insertpoint  \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/clk \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rstn \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_en \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_add \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_en \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_add \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/wr_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_count \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/hist_done \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/rd_hist \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/stop_rd \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/d_val \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/v_data \
+sim:/histogram_tb/duv/inst_hist_bram_ctrl/state
+restart
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+# End time: 18:06:21 on Aug 30,2024, Elapsed time: 0:27:25
+# Errors: 0, Warnings: 2

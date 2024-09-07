@@ -1,0 +1,76 @@
+# Reading pref.tcl
+# OpenFile C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern.mpf
+# Loading project test_pattern
+# Compile of test_pattern_gen.vhd was successful.
+# Compile of test_pattern_top.vhd was successful.
+# Compile of test_pattern_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of wr_txt_tb.vhd was successful with warnings.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# Compile of moving_test_pattern_gen.vhd was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of test_pattern_gen.vhd was successful.
+# Compile of test_pattern_top.vhd was successful.
+# Compile of test_pattern_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of wr_txt_tb.vhd was successful with warnings.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# Compile of moving_test_pattern_gen.vhd was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.wr_txt_tb
+# vsim -gui work.wr_txt_tb 
+# Start time: 15:12:21 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.wr_txt_tb(test_bench)
+# Loading work.test_pattern_top(behavioral)
+# Loading ieee.math_real(body)
+# Loading work.frame_valid(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.diag_test_pattern_gen(behavioral)
+run
+# Compile of test_pattern_gen.vhd was successful.
+# Compile of test_pattern_top.vhd was successful.
+# Compile of test_pattern_tb.vhd was successful with warnings.
+# Compile of frame_valid.vhd was successful.
+# Compile of wr_txt_tb.vhd was successful with warnings.
+# Compile of diag_test_pattern_gen.vhd was successful.
+# Compile of horiz_test_pattern_gen.vhd was successful.
+# Compile of moving_test_pattern_gen.vhd was successful.
+# 8 compiles, 0 failed with no errors.
+run
+add wave -position insertpoint  \
+sim:/wr_txt_tb/clk \
+sim:/wr_txt_tb/rstn \
+sim:/wr_txt_tb/d_val \
+sim:/wr_txt_tb/f_val \
+sim:/wr_txt_tb/v_data \
+sim:/wr_txt_tb/results_file
+# (vsim-4027) Logging is not supported for this item: /wr_txt_tb/results_file
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.wr_txt_tb(test_bench)
+# Loading work.test_pattern_top(behavioral)
+# Loading work.frame_valid(behavioral)
+# Loading work.test_pattern_gen(behavioral)
+add wave -position insertpoint  \
+sim:/wr_txt_tb/duv/clk_freq \
+sim:/wr_txt_tb/duv/x_res \
+sim:/wr_txt_tb/duv/y_res \
+sim:/wr_txt_tb/duv/l2l_w_ns \
+sim:/wr_txt_tb/duv/clk \
+sim:/wr_txt_tb/duv/rstn \
+sim:/wr_txt_tb/duv/d_val \
+sim:/wr_txt_tb/duv/f_val \
+sim:/wr_txt_tb/duv/v_data
+restart
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+# End time: 16:10:16 on Aug 30,2024, Elapsed time: 0:57:55
+# Errors: 0, Warnings: 1

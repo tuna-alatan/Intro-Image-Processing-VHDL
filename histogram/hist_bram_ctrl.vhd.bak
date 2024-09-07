@@ -1,0 +1,132 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+entity hist_bram_ctrl is
+	generic(
+		x_res			: integer := 640;
+		y_res			: integer := 480;
+		
+		max_count_bits	: integer := integer(ceil(log2(real(x_res * y_res))));
+		
+		bram_width_bits	: integer := max_count_bits;
+		bram_depth_bits	: integer := 8
+	);
+	
+	port (
+		clk				: in std_logic;
+		rstn			: in std_logic;
+		
+		rd_en			: out std_logic;
+		rd_add			: out std_logic_vector((bram_depth_bits - 1) downto 0);
+		rd_data			: in std_logic_vector((bram_width_bits - 1) downto 0);
+		
+		wr_en			: out std_logic;
+		wr_add			: out std_logic_vector((bram_depth_bits - 1) downto 0);
+		wr_data			: out std_logic_vector((bram_width_bits - 1) downto 0);
+		
+		count			: out std_logic_vector((bram_depth_bits - 1) downto 0);
+		
+		d_val			: in std_logic;
+		v_data			: in std_logic_vector((bram_depth_bits - 1) downto 0)
+	);
+end hist_bram_ctrl;
+
+architecture Behvaioral of hist_bram_ctrl is
+
+type states is (IDLE, WR_P0, WR_PX, RD_HIST);
+signal state : states;
+
+constant count_max		: integer := (x_res * y_res) - 1;
+constant rd_count_max	: integer := 2**bram_depth_bits - 1;
+
+signal s_count			: integer range 0 to count_max;
+signal rd_count			: integer range 0 to rd_count_max;
+
+signal rd_add_d1		: std_logic_vector((bram_depth_bits - 1) downto 0);
+
+begin
+
+count		<= std_logic_vector(to_unsigned(s_count, bram_depth_bits)); 
+
+state		<= WR_P0 when (s_count = 0) and (d_val = '1') else
+				WR_PX when (0 < s_count ) and (s_count < count_max) else
+				RD_HIST when (count = count_max) else
+				IDLE;
+
+
+P_MAIN : process(clk, rstn)
+begin
+	if (rstn = '0') then			
+		rd_en			<= '0';	
+		rd_add			<= (others => '0');	
+		
+		wr_en			<= '0';
+		wr_add			<= (others => '0');
+		wr_data			<= (others => '0');
+		
+		rd_count		<= 0;
+		
+	elsif rising_edge(clk) then
+	
+		rd_add_d1	<= v_data;
+		
+		case state is
+			when IDLE		=>
+				rd_en		<= '0';
+				
+				if (d_val = '1') then
+					state	<= WR_P0;
+				end if;
+		
+			when WR_P0		=>
+				rd_en		<= d_val;
+				rd_add		<= v_data;
+				state		<= WR_PX;
+				
+			when WR_PX		=>
+				rd_en		<= d_val;
+				rd_add		<= v_data;
+				
+				wr_en		<= d_val;
+				wr_add		<= rd_add_d1;
+				wr_data		<= std_logic_vector(unsigned(rd_data) + to_unsigned(1, bram_width_bits));
+				
+				if (s_count = count_max) then
+					state	<= RD_HIST;
+				end if;
+				
+			when RD_HIST	=>
+				rd_en		<= '1';
+				rd_add		<= std_logic_vector(to_unsigned(rd_count, bram_depth_bits));
+				
+				wr_en		<= '0';
+				
+				if (rd_count = rd_count_max) then
+					rd_count	<= 0;
+					state		<= IDLE;
+				else
+					rd_count	<= rd_count + 1;
+				end if;
+				
+		end case;
+	end if;
+end process;
+
+P_COUNT : process(clk, rstn)
+begin
+	if (rstn = '0') then
+		s_count		<= 0;
+	elsif rising_edge(clk) then
+		if (d_val = '1') then
+			if (s_count = count_max) then
+				s_count	<= 0;			
+			else 
+				s_count	<= s_count + 1;
+			end if;
+		end if;
+	end if;
+end process;
+
+end architecture;

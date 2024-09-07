@@ -1,0 +1,29 @@
+# Reading pref.tcl
+# OpenFile C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.mpf
+# Loading project frame_valid
+# Compile of frame_valid.vhd was successful.
+# Compile of frame_valid_tb.vhd was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.frame_valid_tb
+# vsim -gui work.frame_valid_tb 
+# Start time: 15:03:53 on Aug 30,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading work.frame_valid_tb(test_bench)
+# Loading work.frame_valid(behavioral)
+run
+add wave -position insertpoint  \
+sim:/frame_valid_tb/clk \
+sim:/frame_valid_tb/rstn \
+sim:/frame_valid_tb/f_val \
+sim:/frame_valid_tb/d_val
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Belirtilen modül bulunamadý.
+# 
+# 
+# End time: 15:09:04 on Aug 30,2024, Elapsed time: 0:05:11
+# Errors: 0, Warnings: 1

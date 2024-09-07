@@ -1,0 +1,78 @@
+C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity test_pattern_tb
+-- Compiling architecture test_bench of test_pattern_tb
+** Warning: C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_tb.vhd(14): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_tb.vhd(19): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+-- Loading entity test_pattern_top
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/diag_test_pattern_gen.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity diag_test_pattern_gen
+-- Compiling architecture Behavioral of diag_test_pattern_gen
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_gen.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_gen.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity test_pattern_gen
+-- Compiling architecture Behavioral of test_pattern_gen
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_top.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/test_pattern_top.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity test_pattern_top
+-- Compiling architecture Behavioral of test_pattern_top
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/frame_valid/frame_valid.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package MATH_REAL
+-- Compiling entity frame_valid
+-- Compiling architecture Behavioral of frame_valid
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/wr_txt_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/wr_txt_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_textio
+-- Compiling entity wr_txt_tb
+-- Compiling architecture test_bench of wr_txt_tb
+** Warning: C:/Users/tuna/Documents/Staj2024/test_pattern/wr_txt_tb.vhd(18): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/tuna/Documents/Staj2024/test_pattern/wr_txt_tb.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+-- Loading entity test_pattern_top
+** Warning: C:/Users/tuna/Documents/Staj2024/test_pattern/wr_txt_tb.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/moving_test_pattern_gen.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/moving_test_pattern_gen.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity moving_test_pattern_gen
+-- Compiling architecture Behavioral of moving_test_pattern_gen
+
+} {} {}} C:/Users/tuna/Documents/Staj2024/test_pattern/horiz_test_pattern_gen.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tuna/Documents/Staj2024/test_pattern/horiz_test_pattern_gen.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity horiz_test_pattern_gen
+-- Compiling architecture Behavioral of horiz_test_pattern_gen
+
+} {} {}}
